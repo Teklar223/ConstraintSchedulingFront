@@ -12,7 +12,8 @@
   "dependencies": {
     "expo": "^49.0.16",
     "react": "18.2.0",
-    "react-native": "0.72.6"
+    "react-native": "0.72.6",
+    "react-native-weekly-calendar": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
