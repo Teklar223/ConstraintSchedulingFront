@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import WeeklyCalendar from 'react-native-weekly-calendar';
 import Styles from '../src/Styles'
 
-export default function Homepage() {
-  const sampleEvents = [
+function SampleEvents() {
+  events = [
     {start: '2023-03-23 09:00:00', duration: '00:20:00', note: 'Walk my dog'},
     {
-      start: '2023-03-24 14:00:00',
+      start: '2023-11-11 14:00:00',
       duration: '01:00:00',
       note: "Doctor's appointment",
     },
     {
-      start: '2023-03-25 08:00:00',
+      start: '2023-11-12 08:00:00',
       duration: '00:30:00',
       note: 'Morning exercise',
     },
     {
-      start: '2023-03-25 14:00:00',
+      start: '2023-11-13 14:00:00',
       duration: '02:00:00',
       note: 'Meeting with client',
     },
     {
-      start: '2023-03-25 19:00:00',
+      start: '2023-11-14 19:00:00',
       duration: '01:00:00',
       note: 'Dinner with family',
     },
@@ -32,7 +32,13 @@ export default function Homepage() {
     {start: '2023-03-26 22:00:00', duration: '01:00:00', note: 'Schedule 5'},
   ];
 
+  return events
+}
+
+export default function Homepage() {
+  const [Events, SetEvents] = useState(SampleEvents())
+
   return (
-    <WeeklyCalendar events={sampleEvents} style={Styles.Calendar} />
+    <WeeklyCalendar events={Events} style={Styles.Calendar} />
   );
 }
