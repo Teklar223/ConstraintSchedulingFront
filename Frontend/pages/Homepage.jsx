@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import WeeklyCalendar from 'react-native-weekly-calendar';
 import Styles from '../src/Styles'
 import { Shift } from '../src/Shift';
+import ItemPool from './EmployeePool/EmployeePool';
+import EmployeePool from './EmployeePool/EmployeePool';
 
 function SampleEvents() {
   events = [
@@ -18,10 +20,20 @@ function SampleEvents() {
   return events
 }
 
+function PersonsFiller(){
+  const items = []
+  for(let i = 1; i < 100; i++){
+    items.push({id:`${i}`, name: `Person Number ${i} `})
+  }
+
+  return items;
+}
+
 export default function Homepage() {
   const [Events, SetEvents] = useState(SampleEvents())
 
   return (
-    <WeeklyCalendar events={Events} style={Styles.Calendar} />
+    //<WeeklyCalendar events={Events} style={Styles.Calendar} />
+    <EmployeePool items={PersonsFiller()} />
   );
 }
