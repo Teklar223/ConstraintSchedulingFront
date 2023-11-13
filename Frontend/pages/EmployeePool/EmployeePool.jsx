@@ -3,9 +3,9 @@ import { StyleSheet, Text, Dimensions, ScrollView, View } from 'react-native';
 
 // Gap stuff
 const { width } = Dimensions.get('window');
-const gap = 12;
-const itemPerRow = 3;
-const totalGapSize = (itemPerRow - 1) * gap;
+const gap = 14;
+const itemPerRow = 2;
+const totalGapSize = (itemPerRow) * gap;
 const windowWidth = width;
 const childWidth = (windowWidth - totalGapSize) / itemPerRow;
 
@@ -21,31 +21,34 @@ export default function EmployeePool(props) {
   const items = props["items"]
 
   return (
-        <ScrollView contentContainerStyle={styles.itemsWrap} >
+    <View style= {{backgroundColor:'black', margin: 5}}>
+        <ScrollView contentContainerStyle={styles.itemsWrap}>
             {items.map((item) => (
-                <Text key={item.id} style={{backgroundColor: generateColor(), ...styles.singleItem,}}>
+                <Text key={item.id} style={{backgroundColor: generateColor(), ...styles.singleItem, fontSize:18}}>
                     {item.name}
                 </Text>
             ))}
         </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   itemsWrap: {
+    padding: 5,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginVertical: -(gap / 2),
-    marginHorizontal: -(gap / 2),
+    margin: -(gap / 2),
   },
   singleItem: {
-    marginHorizontal: gap / 2,
     minWidth: childWidth,
     maxWidth: childWidth,
-    padding:10,
-    borderColor: 'black',
-    borderWidth: 1,
-    flexBasis: "33.3333333333%"
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding:5,
+    margin:5,
+    borderRadius:15,
+    borderWidth:1,
   },
 });

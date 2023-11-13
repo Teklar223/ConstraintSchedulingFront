@@ -23,7 +23,9 @@ function SampleEvents() {
 function PersonsFiller(){
   const items = []
   for(let i = 1; i < 100; i++){
-    items.push({id:`${i}`, name: `Person Number ${i} `})
+    items.push({id:`${i}`, name: `Person Number ${i} \n a whole pararagraph of lorem ipsum would be really helpfull, maybe if
+    i try hard enough i can fill a big enough paragraph to satisfy my own needs to satisfy my stubborness instead of just copy pasting
+    the paragraph like a wise man would.`})
   }
 
   return items;
