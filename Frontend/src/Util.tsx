@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 
-function filler(): JSX.Element {
+export default function textFiller(): JSX.Element {
   return (
     <>
       <Text style={styles.baseText}>
@@ -152,6 +152,25 @@ function filler(): JSX.Element {
   );
 }
 
+export const PersonsFiller = () => {
+  const items = []
+  for(let i = 1; i < 100; i++){
+    items.push({id:`${i}`, name: `Person Number ${i} \n a whole pararagraph of lorem ipsum would be really helpfull, maybe if
+    i try hard enough i can fill a big enough paragraph to satisfy my own needs to satisfy my stubborness instead of just copy pasting
+    the paragraph like a wise man would.`})
+  }
+
+  return items;
+}
+
+export const generateRndColor = () => {
+  //https://codingwithrashid.com/how-to-generate-random-colors-in-react-native/
+  const randomColor = Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, '0');
+  return `#${randomColor}`;
+};
+
 const styles = StyleSheet.create({
   baseText: {
     fontFamily: 'Arial',
@@ -160,5 +179,3 @@ const styles = StyleSheet.create({
     color: 'black',
   },
 });
-
-export default filler;

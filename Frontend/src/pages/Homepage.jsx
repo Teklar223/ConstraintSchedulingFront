@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import WeeklyCalendar from 'react-native-weekly-calendar';
-import Styles from '../src/Styles'
-import { Shift } from '../src/Shift';
-import ItemPool from './EmployeePool/EmployeePool';
+import Styles from '../Styles'
+import { Shift } from '../Shift';
+import {PersonsFiller} from '../Util'
 import EmployeePool from './EmployeePool/EmployeePool';
 
 function SampleEvents() {
@@ -20,16 +20,7 @@ function SampleEvents() {
   return events
 }
 
-function PersonsFiller(){
-  const items = []
-  for(let i = 1; i < 100; i++){
-    items.push({id:`${i}`, name: `Person Number ${i} \n a whole pararagraph of lorem ipsum would be really helpfull, maybe if
-    i try hard enough i can fill a big enough paragraph to satisfy my own needs to satisfy my stubborness instead of just copy pasting
-    the paragraph like a wise man would.`})
-  }
 
-  return items;
-}
 
 export default function Homepage() {
   const [Events, SetEvents] = useState(SampleEvents())
